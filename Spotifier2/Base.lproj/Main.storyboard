@@ -59,11 +59,11 @@
                                                     <rect key="frame" x="-1" y="0.0" width="150" height="200"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yjO-Wd-3qX">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="163"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="163"/>
                                                             <color key="backgroundColor" red="0.98222882659999999" green="1" blue="0.10998981250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iig-kJ-Ql1">
-                                                            <rect key="frame" x="8" y="171" width="134" height="21"/>
+                                                            <rect key="frame" x="8" y="171" width="64" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -144,6 +144,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="85W-Ls-hBo"/>
                     <connections>
+                        <outlet property="collectionView" destination="PRc-ZB-pV9" id="dOl-nv-7uH"/>
                         <outlet property="searchField" destination="kpa-EG-GdV" id="62I-f2-n5x"/>
                     </connections>
                 </viewController>

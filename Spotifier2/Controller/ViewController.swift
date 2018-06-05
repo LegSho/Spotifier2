@@ -58,6 +58,12 @@ extension SearchController {
         cleanupUI()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        collectionView.collectionViewLayout.invalidateLayout()                          // sve sracunato do tad - "BACI!" i ponovo sracunaj, sad za novi polozaj uredjaja!
+    }
+    
     //    MARK: - Internal
     private func cleanupUI() {
         searchField.text = nil

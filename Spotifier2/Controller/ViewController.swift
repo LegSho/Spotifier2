@@ -58,11 +58,14 @@ extension SearchController {
         cleanupUI()
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        
-        collectionView.collectionViewLayout.invalidateLayout()                          // sve sracunato do tad - "BACI!" i ponovo sracunaj, sad za novi polozaj uredjaja!
-    }
+    
+//          ako koristim CUSTOM FLOW LAYOUT ovaj metod se izvrsava saam unutar UI-a 
+    
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//        super.viewWillTransition(to: size, with: coordinator)
+//
+//        collectionView.collectionViewLayout.invalidateLayout()                          // sve sracunato do tad - "BACI!" i ponovo sracunaj, sad za novi polozaj uredjaja!
+//    }
     
     //    MARK: - Internal
     private func cleanupUI() {

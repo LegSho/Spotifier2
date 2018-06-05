@@ -18,7 +18,21 @@ final class SearchLayout: UICollectionViewFlowLayout {
         minimumLineSpacing = 10
         sectionInset = UIEdgeInsetsMake(10, 10, 0, 10)
         scrollDirection = .vertical                                     // inace .vertical je po default-u
+        }
+}
+
+extension SearchLayout {
+    
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        guard let oldBounds = collectionView?.bounds else { return false }
         
+        return oldBounds.size != newBounds.size
     }
     
+    override func invalidationContext(forBoundsChange newBounds: CGRect) -> UICollectionViewLayoutInvalidationContext {
+        
+        guard let context = super.invalidationContext(forBoundsChange: newBounds) as? UICollectionViewFlowLayoutInvalidationContext else { return super.invalidationContext(forBoundsChange: newBounds)}
+        context.invalidateFlowLayoutAttributes = true
+        return context
+    }
 }

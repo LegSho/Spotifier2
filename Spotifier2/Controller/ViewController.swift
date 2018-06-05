@@ -82,7 +82,32 @@ extension SearchController: UICollectionViewDataSource {
         return cell
     }
     
-//    poslednje posle svih implementacija - u okviru Storyboarda mogu da spojim dataSource sa CollectionView (isto i TableView npr.) sa Search Controller-om
+//    poslednje posle svih implementacija - u okviru Storyboarda moram spojiti dataSource sa CollectionView (isto i TableView npr.) sa Search Controller-om
+    
+}
+
+extension SearchController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else { fatalError("Must be used with FlowLayout only.") }
+        
+        var itemSize = layout.itemSize
+        
+        var availableWidth = collectionView.bounds.width
+        availableWidth -= (layout.sectionInset.left + layout.sectionInset.right)
+        
+        let columns = floor(availableWidth / (itemSize.width + layout.minimumInteritemSpacing))
+        availableWidth -= ( columns - 1) * layout.minimumInteritemSpacing
+        
+        let w = availableWidth / columns
+        
+        itemSize.width = w
+        
+        return itemSize
+    }
+    
+//      poslednje posle svih implementacija - u okviru Storyboarda moram spojiti delegate sa CollectionView (isto i TableView npr.) sa Search Controller-om
     
 }
 

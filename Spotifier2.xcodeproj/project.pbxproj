@@ -104,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				6A67CD7920BE78A300FA22DD /* Main.storyboard */,
-				6A67CD8B20BE78E800FA22DD /* Model */,
 				6A67CD8C20BE78EC00FA22DD /* View */,
 				6A67CD8820BE78BB00FA22DD /* Controller */,
 				6A67CD8920BE78D000FA22DD /* Data Service */,
@@ -152,13 +151,6 @@
 				6A67CD9B20BE7E7800FA22DD /* SpotifyError.swift */,
 			);
 			name = "Spotify Service";
-			sourceTree = "<group>";
-		};
-		6A67CD8B20BE78E800FA22DD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		6A67CD8C20BE78EC00FA22DD /* View */ = {

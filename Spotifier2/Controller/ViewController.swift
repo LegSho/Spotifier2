@@ -9,7 +9,8 @@
 import UIKit
 
 final class SearchController: UIViewController {
-    
+
+    // MARK: - Variables and IBOutlets
     @IBOutlet private weak var searchField: UITextField!
     
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -32,6 +33,7 @@ final class SearchController: UIViewController {
 
 
 extension SearchController {
+    //     MARK: - Main function
     
     func search(for string: String) {
         
@@ -48,13 +50,15 @@ extension SearchController {
     }
 }
 
+    //    MARK: - View Life Cycles
 extension SearchController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         cleanupUI()
     }
     
+    //    MARK: - Internal
     private func cleanupUI() {
         searchField.text = nil
     }
@@ -65,6 +69,7 @@ extension SearchController {
     }
 }
 
+// MARK: - Collection View part
 extension SearchController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

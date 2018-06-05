@@ -1,0 +1,18 @@
+PODS:
+  - Kingfisher (4.8.0)
+  - SwiftyOAuth (1.1)
+  - TinyConstraints (3.1.1)
+
+DEPENDENCIES:
+  - Kingfisher
+  - SwiftyOAuth
+  - TinyConstraints
+
+SPEC CHECKSUMS:
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  SwiftyOAuth: 2f775155944954ba01ef413746d36f4e1486c561
+  TinyConstraints: c15ce864e9ef87dfd18ee3bd746d510a38d84198
+
+PODFILE CHECKSUM: 717fd24f767a0196a923f27b5a4e1a5a7c007046
+
+COCOAPODS: 1.4.0

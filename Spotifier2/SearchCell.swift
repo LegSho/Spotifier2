@@ -8,7 +8,9 @@
 
 import UIKit
 
+
 // Uvek FINAL pa posle skidaj ako ti treba nasledjivanje
+
 
 final class SearchCell: UICollectionViewCell {
     

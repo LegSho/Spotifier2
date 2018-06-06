@@ -8,18 +8,23 @@
 
 import UIKit
 
+import Kingfisher                                                       // za dohvatanje SLIKA sa neta - imageCacher!
+
 
 // Uvek FINAL pa posle skidaj ako ti treba nasledjivanje
 
 
-final class SearchCell: UICollectionViewCell {
+final class SearchCell: UICollectionViewCell, ReusableView {  
     
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var photoView: UIImageView!
     
     
     func populate(with artist: Artist) {
+        label.text = artist.name
         
+        guard let url = artist.images.first?.url else { return }
+        photoView.kf.setImage(with: url)
     }
     
     

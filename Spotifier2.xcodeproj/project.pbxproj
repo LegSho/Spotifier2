@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48208A81C5E8315084AF7801 /* Pods_Spotifier2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACDFB2D02F22F42FD2439F5 /* Pods_Spotifier2.framework */; };
+		6A2171A420C813AE00E06D28 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2171A320C813AE00E06D28 /* Protocols.swift */; };
 		6A34ECE820C6698900D3D472 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34ECE720C6698900D3D472 /* SearchCell.swift */; };
 		6A34ECEA20C6C08B00D3D472 /* SearchLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34ECE920C6C08B00D3D472 /* SearchLayout.swift */; };
 		6A67CD7620BE78A300FA22DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A67CD7520BE78A300FA22DD /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		2F175B61BD829D708FE0228F /* Pods-SpotifyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpotifyApp/Pods-SpotifyApp.release.xcconfig"; sourceTree = "<group>"; };
 		431B7BED0163EBBD06C2119A /* Pods_SpotifyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotifyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A2171A320C813AE00E06D28 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		6A34ECE720C6698900D3D472 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		6A34ECE920C6C08B00D3D472 /* SearchLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLayout.swift; sourceTree = "<group>"; };
 		6A67CD7220BE78A300FA22DD /* Spotifier2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotifier2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6A2171A220C8139600E06D28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A2171A320C813AE00E06D28 /* Protocols.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		6A67CD6920BE78A300FA22DD = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				6A67CD7920BE78A300FA22DD /* Main.storyboard */,
+				6A2171A220C8139600E06D28 /* Model */,
 				6A67CD8C20BE78EC00FA22DD /* View */,
 				6A67CD8820BE78BB00FA22DD /* Controller */,
 				6A67CD8920BE78D000FA22DD /* Data Service */,
@@ -306,6 +317,7 @@
 				6A67CD9A20BE7E6F00FA22DD /* SearchType.swift in Sources */,
 				6A34ECEA20C6C08B00D3D472 /* SearchLayout.swift in Sources */,
 				6A67CD9620BE7E0E00FA22DD /* DataError.swift in Sources */,
+				6A2171A420C813AE00E06D28 /* Protocols.swift in Sources */,
 				6A67CD9220BE7DFE00FA22DD /* Album.swift in Sources */,
 				6A67CD9420BE7E0400FA22DD /* Track.swift in Sources */,
 				6A67CD9C20BE7E7800FA22DD /* SpotifyError.swift in Sources */,

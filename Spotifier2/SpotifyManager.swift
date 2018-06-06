@@ -32,12 +32,14 @@ final class SpotifyManager {
     
     private var oauthProvider = Provider.spotify(clientID: "f31d18707955410790ecb6dba1cba976",
                                                  clientSecret: "067d574b849547729dcf718e4ecdf689")            // moj Profile
-    
+
+//    BQAagVCo6YQEPsMmM8ZKIUu5lTCfLOwR3ywzxgmMKwWZ5SPWzp4K7xdjhu2E4wDEADoqigthnhvCXqjhBb8
     enum Path {
         
         static let host = "https://api.spotify.com/v1/"
         
         case search                 (q: String, type: SpotifyManager.SearchType)    //  "href": "https://api.spotify.com/v1/search?q=\(q)&type=\(type)"
+        
         case getAListOfNewReleases  (countryCode: String)                           //"href": "https://api.spotify.com/v1/browse/new-releases?country=\(countryCode)"
         case getAnArtist            (id: String)                                    //"href": "https://api.spotify.com/v1/artists/\(id)"
 
@@ -119,7 +121,6 @@ private extension SpotifyManager {
             refreshToken()
             return
         }
-        
         
         
         var urlRequest = apiReq.path.urlRequest                     // GOT TOKEN & IT'S VALID -----> CAN ASKED FOR REQUEST

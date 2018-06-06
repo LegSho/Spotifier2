@@ -23,16 +23,16 @@ final class SearchLayout: UICollectionViewFlowLayout {
 
 extension SearchLayout {
     
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        guard let oldBounds = collectionView?.bounds else { return false }
-        
-        return oldBounds.size != newBounds.size
-    }
-    
-    override func invalidationContext(forBoundsChange newBounds: CGRect) -> UICollectionViewLayoutInvalidationContext {
-        
-        guard let context = super.invalidationContext(forBoundsChange: newBounds) as? UICollectionViewFlowLayoutInvalidationContext else { return super.invalidationContext(forBoundsChange: newBounds)}
-        context.invalidateFlowLayoutAttributes = true
-        return context
-    }
+//    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+//        guard let oldBounds = collectionView?.bounds else { return false }
+//
+//        return oldBounds.size != newBounds.size
+//    }
+//
+//    override func invalidationContext(forBoundsChange newBounds: CGRect) -> UICollectionViewLayoutInvalidationContext {
+//
+//        guard let context = super.invalidationContext(forBoundsChange: newBounds) as? UICollectionViewFlowLayoutInvalidationContext else { return super.invalidationContext(forBoundsChange: newBounds)}
+//        context.invalidateFlowLayoutAttributes = true
+//        return context
+//    }
 }

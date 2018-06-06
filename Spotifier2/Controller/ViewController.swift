@@ -9,7 +9,7 @@
 import UIKit
 
 final class SearchController: UIViewController {
-
+    
     // MARK: - Variables and IBOutlets
     @IBOutlet private weak var searchField: UITextField!
     
@@ -39,31 +39,33 @@ extension SearchController {
         
         dataManager.search(for: string,
                            type: searchType) {
-            artists, albums, tracks, dataError in
-            
-            if let dataError = dataError { return }
-            
-            self.artists = artists
-            self.albums = albums
-            self.tracks = tracks
+                            artists, albums, tracks, dataError in
+                            
+                            if let dataError = dataError { return }
+                            
+                            self.artists = artists
+                            self.albums = albums
+                            self.tracks = tracks
+                            
+                            self.collectionView.reloadData()
         }
     }
 }
 
-    //    MARK: - View Life Cycles
+//    MARK: - View Life Cycles
 extension SearchController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cleanupUI()
     }
     
     
-//          ako koristim CUSTOM FLOW LAYOUT ovaj metod se izvrsava saam unutar UI-a 
+    //          ako koristim CUSTOM FLOW LAYOUT ovaj metod se izvrsava saam unutar UI-a
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-
+        
         collectionView.collectionViewLayout.invalidateLayout()                          // sve sracunato do tad - "BACI!" i ponovo sracunaj, sad za novi polozaj uredjaja!
     }
     
@@ -73,7 +75,11 @@ extension SearchController {
     }
     
     @IBAction func textFieldChanged(_ sender: UITextField) {
-        guard let s = sender.text, s.count > 2 else { return }
+        guard let s = sender.text, s.count > 2 else {
+            artists.removeAll()
+            collectionView.reloadData()
+            return
+        }
         search(for: s)
     }
 }
@@ -82,21 +88,35 @@ extension SearchController {
 extension SearchController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        switch searchType {
+        case .artist :
+            return artists.count
+        case .album :
+            return albums.count
+        case .track :
+            return tracks.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : SearchCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as! SearchCell
-        cell.populate(with: "Name \(indexPath.item)")
-        
+        let cell : SearchCell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCell.reuseIdentifier, for: indexPath) as! SearchCell
+        switch searchType {
+        case .artist :
+            let artist = artists[indexPath.item]
+            cell.populate(with: artist)
+        case .album :
+            break
+        case .track :
+            break
+        }
         return cell
     }
     
-//    poslednje posle svih implementacija - u okviru Storyboarda moram spojiti dataSource sa CollectionView (isto i TableView npr.) sa Search Controller-om
+    //    poslednje posle svih implementacija - u okviru Storyboarda moram spojiti dataSource sa CollectionView (isto i TableView npr.) sa Search Controller-om
     
 }
 
@@ -121,7 +141,7 @@ extension SearchController: UICollectionViewDelegateFlowLayout {
         return itemSize
     }
     
-//      poslednje posle svih implementacija - u okviru Storyboarda moram spojiti delegate sa CollectionView (isto i TableView npr.) sa Search Controller-om
+    //      poslednje posle svih implementacija - u okviru Storyboarda moram spojiti delegate sa CollectionView (isto i TableView npr.) sa Search Controller-om
     
 }
 

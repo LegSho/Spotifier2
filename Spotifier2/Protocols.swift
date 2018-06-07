@@ -14,6 +14,7 @@ protocol ReusableView {
 }
 
 
+
 extension ReusableView where Self: UIView {                 // ogranicavam ga samo na primenu na ono sto nasledjuje UIView  ----- PROTOCOL CONSTRAINT !
     static var reuseIdentifier: String {                      // protocol extension -> gde god se primenjuje ovaj protocol, automatski ce biti kreiran i reuseIdentifier
         return String(describing: self)                          // prosledjivanje samog tipa (self) ce mi vracati BAS IME TOG tipa !!!!! ***** SMANJENA VEROVATNOCA GRESKE SAMO NA INTERFACE BUILDER
